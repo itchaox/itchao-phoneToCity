@@ -1,5 +1,16 @@
+<!--
+ * @Version    : v1.00
+ * @Author     : itchaox
+ * @Date       : 2023-09-25 20:55
+ * @LastAuthor : itchaox
+ * @LastTime   : 2024-04-11 00:38
+ * @desc       : 
+-->
 <script setup>
   import Form from './components/Form.vue';
+  import { useTheme } from '@/hooks/useTheme';
+
+  useTheme();
 </script>
 
 <template>

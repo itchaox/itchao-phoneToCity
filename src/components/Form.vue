@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-11 00:30
+ * @LastTime   : 2024-04-11 00:35
  * @desc       : 
 -->
 <script setup>
@@ -168,7 +168,9 @@
       type="primary"
       class="btn"
       @click="confirm"
-      >运行</el-button
+    >
+      <el-icon size="22"><CaretRight /></el-icon>
+      运行</el-button
     >
   </div>
 </template>
