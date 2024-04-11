@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-11 14:19
+ * @LastTime   : 2024-04-11 14:31
  * @desc       : 
 -->
 <script setup>
@@ -100,7 +100,7 @@
       _list.push({
         recordId: recordIds[index],
         fields: {
-          [field.id]: area.province ? area.province + format + area.city : t('Wrong format of phone number'),
+          [field.id]: area.province ? area.province + format + area.city : `【${t('Wrong format of phone number')}】`,
         },
       });
     }
@@ -183,7 +183,7 @@
   .title {
     font-size: 16px;
     font-weight: 700;
-    color: rgb(31, 35, 41);
+    /* color: rgb(31, 35, 41); */
     margin-bottom: 14px;
   }
 
