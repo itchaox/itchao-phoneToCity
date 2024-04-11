@@ -1,3 +1,19 @@
 {
-  "title":"title"
+  "title": "title",
+  "Please select the mobile phone number column": "Please select the mobile phone number column",
+  "Please select the location format of your mobile phone number": "Please select the location format of your mobile phone number",
+  "Wrong format of phone number": "Wrong format of phone number",
+  "Data processing completed": "Data processing completed",
+  "Mobile phone number column": "Mobile phone number column",
+  "Belonging to the region": "Belonging to the region",
+  "Please select your location": "Please select your location",
+  "Domicile format": "Domicile format",
+  "Please select the location format": "Please select the location format",
+  "run": "Run",
+  "none": "none",
+  "t1": "Format: ShenzhenGuangdong",
+  "t2": "Format: Guangdong-Shenzhen",
+  "t3": "Format: Guangdong_Shenzhen",
+  "t4": "Format: Guangdong/Shenzhen",
+  "loading": "Loading..."
 }

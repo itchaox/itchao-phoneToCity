@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-11 00:35
+ * @LastTime   : 2024-04-11 14:19
  * @desc       : 
 -->
 <script setup>
@@ -12,6 +12,10 @@
   import { ElMessage, ElMessageBox } from 'element-plus';
   import find from '../utils';
 
+  import { useI18n } from 'vue-i18n';
+
+  const { t } = useI18n();
+
   const base = bitable.base;
 
   const fieldOptions = ref();
@@ -19,19 +23,19 @@
 
   let dateFormatList = [
     {
-      name: '格式: 广东深圳',
+      name: 't1',
       value: '无',
     },
     {
-      name: '格式: 广东-深圳',
+      name: 't2',
       value: '-',
     },
     {
-      name: '格式: 广东_深圳',
+      name: 't3',
       value: '_',
     },
     {
-      name: '格式: 广东/深圳',
+      name: 't4',
       value: '/',
     },
   ];
@@ -49,7 +53,7 @@
     if (!fieldId.value) {
       ElMessage({
         type: 'error',
-        message: '请选择手机号码列!',
+        message: t('Please select the mobile phone number column'),
       });
 
       return;
@@ -58,7 +62,7 @@
     if (!dateFormat.value) {
       ElMessage({
         type: 'error',
-        message: '请选择手机号码所属地格式!',
+        message: t('Please select the location format of your mobile phone number'),
       });
       return;
     }
@@ -90,13 +94,13 @@
       if (!val) continue;
 
       const area = find(val[0]?.text);
-      let format = dateFormat.value !== '无' ? dateFormat.value : '';
+      let format = dateFormat.value !== t('none') ? dateFormat.value : '';
 
       // 根据手机号码获取手机号码所属地
       _list.push({
         recordId: recordIds[index],
         fields: {
-          [field.id]: area.province ? area.province + format + area.city : '【手机号码格式错误】',
+          [field.id]: area.province ? area.province + format + area.city : t('Wrong format of phone number'),
         },
       });
     }
@@ -105,7 +109,7 @@
 
     loading.value = false;
     ElMessage({
-      message: '数据处理完成',
+      message: t('Data processing completed'),
       type: 'success',
     });
   }
@@ -114,13 +118,13 @@
 <template>
   <div
     v-loading="loading"
-    element-loading-text="加载中..."
+    :element-loading-text="$t('loading')"
   >
-    <div class="title">手机号码列</div>
+    <div class="title">{{ $t('Mobile phone number column') }}</div>
     <div>
       <el-select
         v-model="fieldId"
-        placeholder="请选择手机号码列"
+        :placeholder="$t('Please select the mobile phone number column')"
         size="large"
       >
         <el-option
@@ -132,11 +136,11 @@
       </el-select>
     </div>
 
-    <div class="title top">所属地列</div>
+    <div class="title top">{{ $t('Belonging to the region') }}</div>
     <div>
       <el-select
         v-model="areaId"
-        placeholder="请选择所属地列"
+        :placeholder="$t('Please select your location')"
         size="large"
       >
         <el-option
@@ -148,18 +152,18 @@
       </el-select>
     </div>
 
-    <div class="title top">所属地格式</div>
+    <div class="title top">{{ $t('Domicile format') }}</div>
     <div>
       <el-select
         v-model="dateFormat"
-        placeholder="请选择所属地格式"
+        :placeholder="$t('Please select the location format')"
         size="large"
       >
         <el-option
           v-for="item in dateFormatList"
           :key="item.value"
-          :label="item.name"
-          :value="item.value"
+          :label="$t(item.name)"
+          :value="$t(item.value)"
         />
       </el-select>
     </div>
@@ -170,7 +174,7 @@
       @click="confirm"
     >
       <el-icon size="22"><CaretRight /></el-icon>
-      运行</el-button
+      {{ $t('run') }}</el-button
     >
   </div>
 </template>

@@ -1,0 +1,19 @@
+{
+  "title": "title",
+  "Please select the mobile phone number column": "携帯電話番号欄を選択してください",
+  "Please select the location format of your mobile phone number": "携帯電話番号の位置情報形式を選択してください",
+  "Wrong format of phone number": "電話番号の形式が間違っています",
+  "Data processing completed": "データ処理が完了しました",
+  "Mobile phone number column": "携帯電話番号欄",
+  "Belonging to the region": "地域に属している",
+  "Please select your location": "所在地を選択してください",
+  "Domicile format": "住所の形式",
+  "Please select the location format": "場所の形式を選択してください",
+  "run": "走る",
+  "none": "なし",
+  "t1": "フォーマット: 深セン広東省",
+  "t2": "フォーマット: 広東-深セン",
+  "t3": "フォーマット: 広東省_深セン",
+  "t4": "フォーマット: 広東/深セン",
+  "loading": "読み込み中..."
+}
