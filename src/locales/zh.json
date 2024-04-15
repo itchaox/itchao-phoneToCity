@@ -15,5 +15,7 @@
   "t2": "格式: 广东-深圳",
   "t3": "格式: 广东_深圳",
   "t4": "格式: 广东/深圳",
-  "loading": "加载中..."
+  "loading": "加载中...",
+  "Operator": "运营商",
+  "Please select the operator column": "请选择运营商列"
 }

@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-16 00:22
+ * @LastTime   : 2024-04-16 00:25
  * @desc       : 
 -->
 <script setup>
@@ -69,7 +69,7 @@
     if (!operatorId.value) {
       ElMessage({
         type: 'error',
-        message: '请选择运营商列',
+        message: t('Please select the operator column'),
       });
       return;
     }
@@ -181,11 +181,11 @@
       </el-select>
     </div>
 
-    <div class="title top">运营商</div>
+    <div class="title top">{{ $t('Operator') }}</div>
     <div>
       <el-select
         v-model="operatorId"
-        placeholder="请选择运营商列"
+        :placeholder="$t('Please select the operator column')"
         size="large"
         clearable
       >

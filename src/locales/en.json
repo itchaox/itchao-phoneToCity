@@ -15,5 +15,7 @@
   "t2": "Format: Guangdong-Shenzhen",
   "t3": "Format: Guangdong_Shenzhen",
   "t4": "Format: Guangdong/Shenzhen",
-  "loading": "Loading..."
+  "loading": "Loading...",
+  "Operator": "Operator",
+  "Please select the operator column": "Please select the operator column"
 }
