@@ -3,14 +3,14 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-11 14:31
+ * @LastTime   : 2024-04-15 23:47
  * @desc       : 
 -->
 <script setup>
   import { ref, onMounted } from 'vue';
   import { bitable, FieldType, DateFormatter } from '@lark-base-open/js-sdk';
   import { ElMessage, ElMessageBox } from 'element-plus';
-  import find from '../utils';
+  import { find } from '../utils';
 
   import { useI18n } from 'vue-i18n';
 
