@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-16 00:11
+ * @LastTime   : 2024-04-16 00:22
  * @desc       : 
 -->
 <script setup>
@@ -55,7 +55,6 @@
         type: 'error',
         message: t('Please select the mobile phone number column'),
       });
-
       return;
     }
 
@@ -63,6 +62,14 @@
       ElMessage({
         type: 'error',
         message: t('Please select the location format of your mobile phone number'),
+      });
+      return;
+    }
+
+    if (!operatorId.value) {
+      ElMessage({
+        type: 'error',
+        message: '请选择运营商列',
       });
       return;
     }
@@ -94,6 +101,7 @@
       if (!val) continue;
 
       const area = find(val[0]?.text);
+
       let format = dateFormat.value !== t('none') ? dateFormat.value : '';
 
       // 根据手机号码获取手机号码所属地
@@ -101,6 +109,7 @@
         recordId: recordIds[index],
         fields: {
           [field.id]: area.province ? area.province + format + area.city : `【${t('Wrong format of phone number')}】`,
+          [operatorId.value]: area.op !== '异常' ? area.op : `【${t('Wrong format of phone number')}】`,
         },
       });
     }
