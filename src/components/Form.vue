@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-19 09:54
+ * @LastTime   : 2024-04-19 14:08
  * @desc       : 
 -->
 <script setup>
@@ -102,7 +102,7 @@
 
       const area = find(val[0]?.text);
 
-      let format = dateFormat.value !== t('none') ? dateFormat.value : '';
+      let format = !['无', 'none', 'なし'].includes(dateFormat.value) ? dateFormat.value : '';
 
       // 根据手机号码获取手机号码所属地
       _list.push({
