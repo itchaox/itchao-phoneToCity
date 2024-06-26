@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-06-26 09:45
+ * @LastTime   : 2024-06-26 09:47
  * @desc       : 
 -->
 <script setup>
@@ -45,7 +45,8 @@
 
   onMounted(async () => {
     const table = await base.getActiveTable();
-    const tableMetaList = await table.getFieldMetaList();
+    const view = await table.getActiveView();
+    const tableMetaList = await view.getFieldMetaList();
     fieldOptions.value = tableMetaList.map((item) => ({ value: item.id, label: item.name }));
   });
 
@@ -178,6 +179,7 @@
           v-model="dateFormat"
           :placeholder="$t('Please select the location format')"
           size="large"
+          clearable
         >
           <el-option
             v-for="item in dateFormatList"
