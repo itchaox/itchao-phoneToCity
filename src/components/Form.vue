@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-06-26 09:38
+ * @LastTime   : 2024-06-26 09:40
  * @desc       : 
 -->
 <script setup>
@@ -135,6 +135,7 @@
       <div class="title">{{ $t('Mobile phone number column') }}</div>
       <div>
         <el-select
+          filterable
           v-model="fieldId"
           :placeholder="$t('Please select the mobile phone number column')"
           size="large"
@@ -154,6 +155,7 @@
       <div class="title top">{{ $t('Belonging to the region') }}</div>
       <div>
         <el-select
+          filterable
           v-model="areaId"
           :placeholder="$t('Please select your location')"
           size="large"
@@ -191,6 +193,7 @@
       <div class="title top">{{ $t('Operator') }}</div>
       <div>
         <el-select
+          filterable
           v-model="operatorId"
           :placeholder="$t('Please select the operator column')"
           size="large"
