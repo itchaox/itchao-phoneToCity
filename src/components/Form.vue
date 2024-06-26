@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-06-26 09:40
+ * @LastTime   : 2024-06-26 09:45
  * @desc       : 
 -->
 <script setup>
@@ -100,7 +100,7 @@
       const val = await cell.val;
       if (!val) continue;
 
-      const area = find(val[0]?.text);
+      const area = find(val[0]?.text || val);
 
       let format = !['无', 'none', 'なし'].includes(dateFormat.value) ? dateFormat.value : '';
 
