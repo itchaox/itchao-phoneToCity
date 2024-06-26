@@ -3,7 +3,7 @@
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
  * @LastAuthor : itchaox
- * @LastTime   : 2024-04-19 14:08
+ * @LastTime   : 2024-06-26 09:38
  * @desc       : 
 -->
 <script setup>
@@ -131,71 +131,79 @@
     v-loading="loading"
     :element-loading-text="$t('loading')"
   >
-    <div class="title">{{ $t('Mobile phone number column') }}</div>
-    <div>
-      <el-select
-        v-model="fieldId"
-        :placeholder="$t('Please select the mobile phone number column')"
-        size="large"
-        clearable
-      >
-        <el-option
-          v-for="item in fieldOptions?.filter((item) => item.value !== areaId && item.value !== operatorId)"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        />
-      </el-select>
+    <div class="line">
+      <div class="title">{{ $t('Mobile phone number column') }}</div>
+      <div>
+        <el-select
+          v-model="fieldId"
+          :placeholder="$t('Please select the mobile phone number column')"
+          size="large"
+          clearable
+        >
+          <el-option
+            v-for="item in fieldOptions?.filter((item) => item.value !== areaId && item.value !== operatorId)"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </div>
     </div>
 
-    <div class="title top">{{ $t('Belonging to the region') }}</div>
-    <div>
-      <el-select
-        v-model="areaId"
-        :placeholder="$t('Please select your location')"
-        size="large"
-        clearable
-      >
-        <el-option
-          v-for="item in fieldOptions?.filter((item) => item.value !== fieldId && item.value !== operatorId)"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        />
-      </el-select>
+    <div class="line">
+      <div class="title top">{{ $t('Belonging to the region') }}</div>
+      <div>
+        <el-select
+          v-model="areaId"
+          :placeholder="$t('Please select your location')"
+          size="large"
+          clearable
+        >
+          <el-option
+            v-for="item in fieldOptions?.filter((item) => item.value !== fieldId && item.value !== operatorId)"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </div>
     </div>
 
-    <div class="title top">{{ $t('Domicile format') }}</div>
-    <div>
-      <el-select
-        v-model="dateFormat"
-        :placeholder="$t('Please select the location format')"
-        size="large"
-      >
-        <el-option
-          v-for="item in dateFormatList"
-          :key="item.value"
-          :label="$t(item.name)"
-          :value="$t(item.value)"
-        />
-      </el-select>
+    <div class="line">
+      <div class="title top">{{ $t('Domicile format') }}</div>
+      <div>
+        <el-select
+          v-model="dateFormat"
+          :placeholder="$t('Please select the location format')"
+          size="large"
+        >
+          <el-option
+            v-for="item in dateFormatList"
+            :key="item.value"
+            :label="$t(item.name)"
+            :value="$t(item.value)"
+          />
+        </el-select>
+      </div>
     </div>
 
-    <div class="title top">{{ $t('Operator') }}</div>
-    <div>
-      <el-select
-        v-model="operatorId"
-        :placeholder="$t('Please select the operator column')"
-        size="large"
-        clearable
-      >
-        <el-option
-          v-for="item in fieldOptions?.filter((item) => item.value !== fieldId && item.value !== areaId)"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        />
-      </el-select>
+    <div class="line">
+      <div class="title top">{{ $t('Operator') }}</div>
+      <div>
+        <el-select
+          v-model="operatorId"
+          :placeholder="$t('Please select the operator column')"
+          size="large"
+          clearable
+        >
+          <el-option
+            v-for="item in fieldOptions?.filter((item) => item.value !== fieldId && item.value !== areaId)"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </div>
     </div>
 
     <el-button
@@ -210,15 +218,20 @@
 </template>
 
 <style scoped>
-  .title {
-    font-size: 16px;
-    font-weight: 700;
-    /* color: rgb(31, 35, 41); */
+  .line {
+    display: flex;
+    align-items: center;
     margin-bottom: 14px;
   }
 
+  .title {
+    font-size: 16px;
+    /* font-weight: 700; */
+    margin-right: 5px;
+    width: 85px;
+  }
+
   .top {
-    margin-top: 20px;
   }
 
   .btn {

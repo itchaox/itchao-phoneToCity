@@ -1,12 +1,12 @@
 {
   "title": "标题",
-  "Please select the mobile phone number column": "请选择手机号码列",
+  "Please select the mobile phone number column": "请选择手机号码",
   "Please select the location format of your mobile phone number": "请选择手机号码所属地格式",
   "Wrong format of phone number": "手机号码格式错误",
   "Data processing completed": "数据处理完成",
-  "Mobile phone number column": "手机号码列",
-  "Belonging to the region": "所属地列",
-  "Please select your location": "请选择所属地列",
+  "Mobile phone number column": "手机号码",
+  "Belonging to the region": "所属地",
+  "Please select your location": "请选择所属地",
   "Domicile format": "所属地格式",
   "Please select the location format": "请选择所属地格式",
   "run": "运行",
@@ -17,5 +17,5 @@
   "t4": "格式: 广东/深圳",
   "loading": "加载中...",
   "Operator": "运营商",
-  "Please select the operator column": "请选择运营商列"
+  "Please select the operator column": "请选择运营商"
 }
