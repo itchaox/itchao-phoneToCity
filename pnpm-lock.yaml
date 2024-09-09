@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.3.1
     version: 2.3.1(vue@3.2.37)
   '@lark-base-open/js-sdk':
-    specifier: 0.3.5-alpha.4
-    version: 0.3.5-alpha.4
+    specifier: https://lf3-static.bytednsdoc.com/obj/eden-cn/jjjpceh7nulojvhj/@lark-base-open-js-sdk-0.4.1-rc.7.tgz
+    version: '@lf3-static.bytednsdoc.com/obj/eden-cn/jjjpceh7nulojvhj/@lark-base-open-js-sdk-0.4.1-rc.7.tgz'
   element-plus:
     specifier: ^2.3.6
     version: 2.3.6(vue@3.2.37)
@@ -132,10 +132,6 @@ packages:
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
-
-  /@lark-base-open/js-sdk@0.3.5-alpha.4:
-    resolution: {integrity: sha512-7kJPOKk7p8ghcH7XLnK+v50BbrD73fVek4u5FgPA5cJchkfX6o/9NNg2W7st1Qi/OM3Rcme/NJUosVfS+RrKmw==}
-    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1198,3 +1194,9 @@ packages:
   /webpack-virtual-modules@0.5.0:
     resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==}
     dev: true
+
+  '@lf3-static.bytednsdoc.com/obj/eden-cn/jjjpceh7nulojvhj/@lark-base-open-js-sdk-0.4.1-rc.7.tgz':
+    resolution: {tarball: https://lf3-static.bytednsdoc.com/obj/eden-cn/jjjpceh7nulojvhj/@lark-base-open-js-sdk-0.4.1-rc.7.tgz}
+    name: '@lark-base-open/js-sdk'
+    version: 0.4.1-rc.7
+    dev: false

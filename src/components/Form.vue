@@ -2,8 +2,8 @@
  * @Version    : v1.00
  * @Author     : itchaox
  * @Date       : 2023-09-26 15:10
- * @LastAuthor : itchaox
- * @LastTime   : 2024-06-26 09:47
+ * @LastAuthor : Wang Chao
+ * @LastTime   : 2024-09-09 15:02
  * @desc       : 
 -->
 <script setup>
@@ -81,6 +81,30 @@
   // 所属地列
   const areaId = ref();
 
+  const recordIds = [];
+
+  async function getAllRecordIdList(_pageToken = 0) {
+    const table = await base.getActiveTable();
+    const data = await table.getRecordIdListByPage({ pageSize: 200, pageToken: _pageToken }); // 获取所有记录 id
+    const { total, hasMore, recordIds: recordIdsData, pageToken } = data;
+    recordIds.push(...recordIdsData);
+    if (hasMore) {
+      await getAllRecordIdList(pageToken);
+    }
+  }
+
+  const recordList = [];
+  async function getAllRecordList(_pageToken = 0) {
+    const table = await base.getActiveTable();
+    const data = await table.getRecordListByPage({ pageSize: 200, pageToken: _pageToken });
+    const { total, hasMore, records: recordsData, pageToken } = data;
+    recordList.push(...recordsData);
+
+    if (hasMore) {
+      await getAllRecordList(pageToken);
+    }
+  }
+
   /**
    * @desc  : 生成手机号码所属地列
    */
@@ -88,17 +112,17 @@
     loading.value = true;
 
     const table = await base.getActiveTable();
-    const recordList = await table.getRecordList();
     const field = await table.getField(areaId.value); // 选择某个多行文本字段
-    const recordIds = await table.getRecordIdList(); // 获取所有记录 id
+
+    await getAllRecordList();
+    await getAllRecordIdList();
 
     let _list = [];
-    for (const record of recordList) {
-      const id = record.id;
-      // 获取索引
-      const index = recordList.recordIdList.findIndex((iId) => iId === id);
-      const cell = await record.getCellByField(fieldId.value);
+    for (let index = 0; index < recordList.length; index++) {
+      const _field = await table.getFieldById(fieldId.value);
+      const cell = await _field.getCell(recordList[index]?.id);
       const val = await cell.val;
+
       if (!val) continue;
 
       const area = find(val[0]?.text || val);
